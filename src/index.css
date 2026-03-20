@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 54 44% 48%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 5%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 10% 95%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 54 44% 48%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 54 44% 48%;
+
+    --radius: 0.5rem;
+
+    /* TMR brand tokens */
+    --gold: 54 44% 48%;
+    --gold-light: 54 35% 65%;
+    --gold-dark: 54 50% 38%;
+    --dark: 0 0% 5%;
+    --dark-card: 0 0% 11%;
+    --dark-light: 0 0% 15%;
+    --olive-bg: 46 30% 65%;
+
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .bg-dark {
+    background-color: hsl(var(--dark));
+  }
+
+  .bg-dark-card {
+    background-color: hsl(var(--dark-card));
+  }
+
+  .bg-olive {
+    background-color: hsl(var(--olive-bg));
+  }
+
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .bg-gold {
+    background-color: hsl(var(--gold));
+  }
+
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-8 py-3.5 font-medium tracking-wider text-sm uppercase transition-all duration-300 rounded-full;
+    background-color: hsl(var(--gold));
+    color: hsl(var(--dark));
+    font-family: var(--font-body);
+  }
+
+  .btn-gold:hover {
+    background-color: hsl(var(--gold-dark));
+  }
+
+  .btn-outline-gold {
+    @apply inline-flex items-center gap-2 px-8 py-3.5 font-medium tracking-wider text-sm uppercase transition-all duration-300 border rounded-full;
+    border-color: hsl(var(--gold));
+    color: hsl(var(--gold));
+    background: transparent;
+    font-family: var(--font-body);
+  }
+
+  .btn-outline-gold:hover {
+    background-color: hsl(var(--gold));
+    color: hsl(var(--dark));
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center gap-2 px-8 py-3.5 font-medium tracking-wider text-sm uppercase transition-all duration-300 rounded-full;
+    background-color: hsl(var(--dark));
+    color: white;
+    font-family: var(--font-body);
+  }
+
+  .btn-dark:hover {
+    background-color: hsl(var(--dark-light));
+  }
+
+  .heading-display {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight;
+  }
+
+  .text-body {
+    font-family: var(--font-body);
+    @apply font-light leading-relaxed;
+  }
+}
